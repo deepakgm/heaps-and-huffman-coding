@@ -7,6 +7,13 @@ public class Node implements Comparable<Node> {
     private Node right;
     private Node parent;
 
+    public Node() {
+    }
+
+    public Node(String value) {
+        this.value=value;
+    }
+
     public Node(String value, int frequency) {
         this.value = value;
         this.frequency = frequency;

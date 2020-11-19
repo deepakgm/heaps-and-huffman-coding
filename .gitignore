@@ -25,3 +25,7 @@ hs_err_pid*
 .idea
 out
 *.iml
+
+code_table.txt
+encoded.bin
+decoded.txt

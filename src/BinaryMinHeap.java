@@ -4,17 +4,16 @@ import java.util.ArrayList;
 public class BinaryMinHeap<E extends Comparable<E>> implements MinHeap<E> {
     private Object[] arr;
     private int size;
-    private int capacity;
 
     public BinaryMinHeap(int size) {
         this.arr = new Object[size];
-        this.capacity=size;
     }
 
     private boolean isValidIndex(int index) {
         return (index < this.size);
     }
 
+    @SuppressWarnings("unchecked")
     private E get(int index){
         if(isValidIndex(index)) return (E) this.arr[index];
         else return null;

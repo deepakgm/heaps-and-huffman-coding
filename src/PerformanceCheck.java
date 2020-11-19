@@ -5,9 +5,15 @@ import java.util.Map;
 
 public class PerformanceCheck {
     public static void main(String[] args) {
+        if(args.length<1){
+            System.out.println("not enough arguments");
+            System.exit(0);
+        }
+        String inputFile = args[0];
+
         Map<String,Integer> map= new HashMap<>();
         try {
-            FileReader reader=new FileReader("data/sample_input_large.txt");
+            FileReader reader=new FileReader(inputFile);
             BufferedReader bufferedReader=new BufferedReader(reader);
             String line= bufferedReader.readLine();
             while(line!=null && !line.isEmpty()){
@@ -16,7 +22,9 @@ public class PerformanceCheck {
                 line= bufferedReader.readLine();
             }
         }catch (Exception e){
+            System.out.println("Error while parsing input file!: "+e.getMessage());
             e.printStackTrace();
+            System.exit(1);
         }
 
         long startTime,endTime;

@@ -3,18 +3,17 @@
 public class FourWayMinHeap<E extends Comparable<E>> implements MinHeap<E> {
     private Object[] arr;
     private int size;
-    private int capacity;
     private static final int d = 4;
 
     public FourWayMinHeap(int size) {
         this.arr = new Object[size];
-        this.capacity = size;
     }
 
     private boolean isValidIndex(int index) {
         return (index < this.size);
     }
 
+    @SuppressWarnings("unchecked")
     private E get(int index) {
         if (isValidIndex(index)) return (E) this.arr[index];
         else return null;
@@ -57,6 +56,7 @@ public class FourWayMinHeap<E extends Comparable<E>> implements MinHeap<E> {
         }
     }
 
+    @SuppressWarnings("unchecked")
     private void topDownHeapify(int index) {
         E parent = get(index);
         int leftChildIndex=getLeftChildIndex(index);

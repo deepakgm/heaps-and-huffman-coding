@@ -87,7 +87,7 @@ public class FourWayMinHeap<E extends Comparable<E>> implements MinHeap<E> {
     }
 
     @Override
-    public E getMin() {
+    public E removeMin() {
         if (isEmpty())
             return null;
         E min = getRoot();

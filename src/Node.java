@@ -10,18 +10,13 @@ public class Node implements Comparable<Node> {
     public Node() {
     }
 
-    public Node(String value) {
-        this.value=value;
-    }
-
     public Node(String value, int frequency) {
         this.value = value;
         this.frequency = frequency;
     }
 
-    public Node(String value, int frequency, Node left, Node right) {
-        this.value = value;
-        this.frequency = frequency;
+    public Node(Node left, Node right) {
+        this.frequency = left.getFrequency()+ right.getFrequency();
         this.left = left;
         this.right = right;
         this.left.parent=this;
